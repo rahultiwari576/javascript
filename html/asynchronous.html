@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming in Javascript</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    a {
+        background-color: red;
+        border: 1px solid rgb(10, 10, 10);
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    a:hover {
+        background-color: rgb(124, 8, 8);
+        /* color: black; */
+    }
+
+    label,
+    ol li {
+        margin: 0.5rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Asynchronous Programming in Javascript</h1>
+        <label for="youTube"> For more Clarification Click on this Link</label>
+        <a id="youTube" href="https://www.youtube.com/watch?v=SWWl1o0LT1I&t=1s&ab_channel=CodeWithHarry">YouTube
+            Link</a>
+
+        <ol>
+            <li>Asynchronous code does not have to wait; the program can continue to run. The asynchronous programming
+                makes it possible to express waiting for long-running actions without stopping the program during these
+                actions. JavaScript usually implements this style of programming using callbacks.
+
+                Asynchronous programming is made easier by using promises, objects that represent actions that might
+                complete in the future, and async functions, which allow us to write an asynchronous program as if it
+                were synchronous.</li>
+            <li>An Asynchronous model allows multiple things to happen at the same time</li>
+            <li>In Synchronous programming model, things happen one at a time</li>
+            <li>When you call a function that performs a long action, it returns only when the action has finished so
+                that it can return the result</li>
+            <li>This stops your program for the time action takes</li>
+        </ol>
+
+    </div>
+
+</body>
+<script src="/js/async.js"></script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model(Web Development)</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <ul id="nav" >
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact Us</li>
+            <li>More about us</li>
+        </ul>
+    </div>
+
+    <div id="main-two" class="container">
+        another container
+    </div>
+</body> 
+<script>
+    // We can grab the single element by using single element selector 
+    // here we are grabing a single element form dom by using its id in "a" variable 
+    let a = document.getElementById('main');
+    console.log(a);
+
+    let nav = document.getElementById("nav");
+    console.log(nav);
+// ---------------------------------------------------------------------------------------
+    // we can also get all the elements in string by using this command in console 
+    // nav.innerHTML
+
+    // if we want to change the element in our HTML we can use this command in console 
+    // nav.innerHTML = "<li>Dynamic element</li>"
+    // nav.innerHTML = "<p>Replaced element</p>"
+//-----------------------------------------------------------------------------------------
+
+// we can also grab the class by using its class name 
+let contain = document.getElementsByClassName('container');
+console.log(contain);
+
+// we can also do indexing like an array to acheive the particular container
+// like containers[1] or containers[0]
+console.log(contain[1]);
+//-----------------------------------------------------------------------------------------
+// by using query selector we can select first element in the document of css selector (.container in css)
+
+let sel = document.querySelector('.container');
+console.log('Returns css selector', sel);
+
+
+let selTwo = document.querySelector('#main-two').style.backgroundColor = "red";
+
+// or 
+
+// selTwo.style.backgroundColor = "black";  
+console.log(selTwo);
+
+// we can also grab first child of any element by using query selector 
+let querySel = document.querySelector('#nav>li');
+// it returns first child of element which have id nav
+console.log(querySel);
+
+// Query selector all will return all the matching element in our dom
+// In this case we got all li elements in nav with the help of queryselectorall
+let queryselAll = document.querySelectorAll("#nav>li");
+console.log(queryselAll);
+
+</script>
+</html>

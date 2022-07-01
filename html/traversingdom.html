@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing Dom</title>
+</head>
+<style>
+    a{
+        padding: 8px 15px;
+        margin: 10px;
+        border: 2px solid red;
+        background-color: orange;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    a:hover{
+        background-color: orangered;
+    }
+
+    form{
+        margin: 1rem;
+    }
+
+    .child{
+        margin: 1rem;
+    }
+</style>
+<body>
+    <div id= "node" class="container">
+        <h1 id="heading">Traversing using Dom</h1>
+        <!-- comment for child nodes  -->
+        <div class="child">child 1
+            <ul>
+                <li class="childul">This</li>
+                <li class="childul">is</li>
+                <li class="childul">another</li>
+                <li class="childul">child in div</li>
+            </ul>
+        </div>
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+        <div id="child-html" class="child">child 4</div>
+        <a href="http://www.flipkart.com/" class="href">flipkart</a>
+            <a href="http://www.facebook.com/" class="href">facebook</a>
+            <a href="http://www.youtube.com/" class="href">youtube</a>
+        <form action="harsh.php">
+            Enter some text: <input type="text">
+            
+            <input type="button" value="Submit">
+        </form>
+
+        <div class="img"><img src="../images/download.jpg" alt=""></div>
+    </div>
+
+
+</body>
+<script src="/js/traversingdom.js"></script>
+</html>
