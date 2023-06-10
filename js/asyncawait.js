@@ -39,7 +39,7 @@ variableFunc().then((result) => {
 // Understanding the code flow of await method in async function
 async function demo() {
     console.log('B');
-    // If we put the await method here it will hold all the next tasks(i.e D and E) and skip out of this function and will complete the rest task (here consoling F) and after completion it will get back to complete the incomplete task (i.e D and E)
+    // If we put the await method here it will hold all the next tasks(i.e D and E) and skip out of this function and will complete the rest task (instead of consoling c it will console consoling F) and after completion it will get back to complete the incomplete task (i.e D and E)
     //! await is basically means wait until data received
     await console.log('C');
     console.log('D');

@@ -11,22 +11,27 @@ let obj = {
     hobbies: 'Android App Development'
 }
 
-//Using Object.keys() method We'll get all the keys of object in obj (3) ['name', 'language', 'hobbies']
+ console.log(obj[[ 'name', 'language', 'hobbies' ][2]]); 
+
+//Using Object.keys() method We'll get all the keys of object in array ['name', 'language', 'hobbies']
 console.log(Object.keys(obj)); 
-console.log(Object.keys(obj).length); // Using same method to fetch the length of an obj
+console.log(Object.keys(obj).length); // result 3 the lenth of array Using same method to fetch the length of an array
 
 console.log('------For loop to iterate the object in tradional way--------');
 // Traditional "for" loop for iterating an object
-for (let index = 0; index < Object.keys(obj).length; index++) {
-    const element = obj[Object.keys(obj)[index]];
+// Here Object.keys(obj).length is equal to 3
+for (let index = 0; index < Object.keys(obj).length; index++) {     
+    const element = obj[Object.keys(obj)[index]]; // this is how it's working here console.log(obj[[ 'name', 'language', 'hobbies' ][2]]); 
     console.log(element);
 }
 
 // Or we can use "for in loop" to iterate the object in the simplest way
 console.log('------For In loop to iterate the object------');
 
+
 for (const key in obj) {
-    console.log(obj[key]);
+    //we'll get the key as an string and we know that can grab the object keys both way person.firstName or person['firstName']
+    console.log(obj[key]);  // so here It will executing like obj['name'] or obj.name and we'll get every keys from obj in key variable
 }
 
 // ITERATING THE STRING
