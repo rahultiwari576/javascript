@@ -164,9 +164,17 @@ function age (a,b) {
    if  (b<a){
      return a; 
    }
-
-
 }
 
-    let returnvalThree = age(8,9);
+   let returnvalThree = age(8,9);
    console.log(returnvalThree);
+
+   console.log('----------------testing return in function so that I can understand where it will get stored--------------------')
+
+   let abhi = 1
+
+   const reducer = ()=>{
+    return abhi+=1
+   }
+
+   console.log(reducer())

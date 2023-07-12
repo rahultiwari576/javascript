@@ -99,9 +99,7 @@ let marks2 = [2, 6, 76, 8787, 575];
 marks = marks.concat(marks2); //here we can't change our marks value because we have created the variable using const so first we change the variable type using let the we can view the results
 console.log(marks);
 
-//? Filter -------------------
-
-console.log("-------------filter");
+//? Filter -------------------console.log("-------------filter");
 let ageArray = [2, 10, 48, 40, 20, 6];
 
 // Here we used filter method to filter the age which is greater than 18
@@ -118,27 +116,29 @@ function checkAge(age, index, array) {
   return age >= 18;
 }
 
+
 // Here we have this return which is returning a boolean value true or false the string "harsh" length is 5 which is not equal to 0 so this will return true and this function will return 0th index element to the filter array again we have an empty string length 0 which is equal to 0 but according to the condition this statement returns false so it will filter out the 1st index element so we have only one element left in new filtered array that's why its length is 1.
 
-/* let xx = ['harsh', ""];
-console.log(xx.length) // here we are getting the length is the array which is 2
+let xx = ['harsh', ""];
+// console.log(xx.length) // here we are getting the length is the array which is 2
 let yy = xx.filter(yellow) // calling the function "yellow" which we defined below
 
-function yellow(element) {
-    console.log(element)
+function yellow(element, index, array) {
+    console.log(element) // we get both the element "harsh" and ""
         // Here we are getting the length of the element "5" which is in array for "harsh" and 0 for empty string element
-    console.log(element.length)
+    console.log(element.length) // we get both elements length "harsh" 5 and "" 0
 
-    return element.length !== 0 
+    return element.length !== 0  // it will return only harsh element because only this element matching the following condition
 }
-console.log(yy.length)
-console.log(yy); */
+console.log(yy); // As we know filter function returns a new array after filteration ['harsh']
+console.log(yy.length)  // And the length of above array is 1
+
 
 // or we can use this shorthand to achieve the same result
 
-let xx = ["harsh", ""].filter((element) => {
-  return element.length !== 0;
-}).length;
+// let xx = ["harsh", ""].filter((element) => {
+//   return element.length !== 0;
+// }).length;  // length of an array we get is 1 ["harsh"]
 
 // xx = [""]
 // xx.length = 1
@@ -146,7 +146,7 @@ let xx = ["harsh", ""].filter((element) => {
 // element.length = 0
 // how?
 // In js the "" length is 1
-// but in function we are getting 0th index element only without string from array that's why its length is 0
+// but in function we are getting 1th index element only without string from array that's why its length is 0
 
 let zz = [""];
 console.log(zz.length);
@@ -161,8 +161,35 @@ function red(element) {
 console.log(ff.length); // that is why the length of yy array is 0
 console.log(zz);
 
+
+// removing an object from the array using filter
+let cusArray = [{
+  id: 1,
+  name:'Harsh',
+  lname: "jha"
+ },
+ {
+  id: 2,
+  name:'Rohan',
+  lname: "Raj"
+ },
+ {
+  id: 3,
+  name:'Abhishek',
+  lname: "Amrit"
+ }];
+
+ let newCusArray = cusArray.filter(blue)
+
+ function blue(item){
+  console.log(item)
+  return item.id !== 2 // return the elements(objects) which is not equal to 2
+ }
+
+ console.log(newCusArray)
+
 console.log("Maps in Array--------------"); // Maps in arrays
-// follow this link for more clarification https://www.youtube.com/watch?v=5AFav46K9LM&ab_channel=TechGun
+//? follow this link for more clarification https://www.youtube.com/watch?v=5AFav46K9LM&ab_channel=TechGun
 // Without map method for iterating an array and getting new array with some changes using old array
 
 let array = [10, 3, 5, 7, 8];
@@ -414,9 +441,8 @@ console.log(Object.entries(sales)[0][1]); // result 30
 console.log(Object.entries(sales)[1][0]); // result Sally
 console.log(Object.entries(sales)[1][1]); // result 40
 
-console.log(
-  "------ Custom function for adding all the key values ---------------"
-);
+console.log("------ Custom function for adding all the key values ---------------");
+
 // Here we have created a custom function name "sumSales"
 function sumSales(sales) {
   // Here we have a variable called sum and number stored in this variable
@@ -428,9 +454,9 @@ function sumSales(sales) {
 
     /* 
         'Incrementing operators'
-        //? we can increment our number from both the ways 
+        // ! we can increment our number from both the ways 
         let a = 45;
-        //?both will increment the number by 1
+        //! both will increment the number by 1
         a += 1;
         a++;
         console.log(a);
@@ -446,3 +472,63 @@ function sumSales(sales) {
 }
 
 console.log(sumSales(sales));  // result 205
+
+
+console.log("------ Custom function for iterating all the key values pair ---------------");
+
+function personSales(obj){
+    // used object destructuring method to store both key and value pair into keyy and valuee variables
+    for(let [keyy,valuee] of Object.entries(obj)){
+        console.log(`${keyy} had ${valuee} sales`)
+    }
+}
+
+console.log(personSales(sales))
+
+let tokenDark = {
+    grey:{
+        fir: "#aaaa",
+        sec: "#bbbb",
+        thr: "#cccc"
+    },
+    green:{
+        for: "#dddd",
+        fif: "#eeee",
+        six: "#ffff"
+    },
+    yellow:{
+        sev: "#gggg",
+        eig: "#hhhh",
+        nin: "#iiii"
+    }
+}
+
+
+// console.log(Object.entries(tokenDark)) 
+// console.log(Object.keys(tokenDark)); 
+Object.entries(tokenDark).forEach(function([key, val]){
+    // console.log(key)
+    // console.log(val)
+    const keys = Object.keys(val);
+    console.log(keys) 
+    const values = Object.values(val);
+    // console.log(values) 
+    const length = keys.length;
+    // console.log(length) 
+    let reversedObj = {};
+
+    for (let i = 0; i < length; i++) {
+        console.log(keys)
+        // console.log( keys[0])
+        // reversedObj[keys[i]] = values[length - i - 1];
+        // console.log(reversedObj[keys[i]])
+        // console.log(values[length - i - 1]) 
+     
+      }
+})
+
+console.log('*********************************')
+
+
+
+
