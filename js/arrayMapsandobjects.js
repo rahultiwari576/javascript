@@ -116,23 +116,21 @@ function checkAge(age, index, array) {
   return age >= 18;
 }
 
-
 // Here we have this return which is returning a boolean value true or false the string "harsh" length is 5 which is not equal to 0 so this will return true and this function will return 0th index element to the filter array again we have an empty string length 0 which is equal to 0 but according to the condition this statement returns false so it will filter out the 1st index element so we have only one element left in new filtered array that's why its length is 1.
 
-let xx = ['harsh', ""];
+let xx = ["harsh", ""];
 // console.log(xx.length) // here we are getting the length is the array which is 2
-let yy = xx.filter(yellow) // calling the function "yellow" which we defined below
+let yy = xx.filter(yellow); // calling the function "yellow" which we defined below
 
 function yellow(element, index, array) {
-    console.log(element) // we get both the element "harsh" and ""
-        // Here we are getting the length of the element "5" which is in array for "harsh" and 0 for empty string element
-    console.log(element.length) // we get both elements length "harsh" 5 and "" 0
+  console.log(element); // we get both the element "harsh" and ""
+  // Here we are getting the length of the element "5" which is in array for "harsh" and 0 for empty string element
+  console.log(element.length); // we get both elements length "harsh" 5 and "" 0
 
-    return element.length !== 0  // it will return only harsh element because only this element matching the following condition
+  return element.length !== 0; // it will return only harsh element because only this element matching the following condition
 }
 console.log(yy); // As we know filter function returns a new array after filteration ['harsh']
-console.log(yy.length)  // And the length of above array is 1
-
+console.log(yy.length); // And the length of above array is 1
 
 // or we can use this shorthand to achieve the same result
 
@@ -161,32 +159,33 @@ function red(element) {
 console.log(ff.length); // that is why the length of yy array is 0
 console.log(zz);
 
-
 // removing an object from the array using filter
-let cusArray = [{
-  id: 1,
-  name:'Harsh',
-  lname: "jha"
- },
- {
-  id: 2,
-  name:'Rohan',
-  lname: "Raj"
- },
- {
-  id: 3,
-  name:'Abhishek',
-  lname: "Amrit"
- }];
+let cusArray = [
+  {
+    id: 1,
+    name: "Harsh",
+    lname: "jha",
+  },
+  {
+    id: 2,
+    name: "Rohan",
+    lname: "Raj",
+  },
+  {
+    id: 3,
+    name: "Abhishek",
+    lname: "Amrit",
+  },
+];
 
- let newCusArray = cusArray.filter(blue)
+let newCusArray = cusArray.filter(blue);
 
- function blue(item){
-  console.log(item)
-  return item.id !== 2 // return the elements(objects) which is not equal to 2
- }
+function blue(item) {
+  console.log(item);
+  return item.id !== 2; // return the elements(objects) which is not equal to 2
+}
 
- console.log(newCusArray)
+console.log(newCusArray);
 
 console.log("Maps in Array--------------"); // Maps in arrays
 //? follow this link for more clarification https://www.youtube.com/watch?v=5AFav46K9LM&ab_channel=TechGun
@@ -422,7 +421,7 @@ const sales = {
 console.log(Object.keys(sales)); // result [ 'John', 'Sally', 'Tobby', 'Mad', 'King' ]
 // It will create an array of "values"
 console.log(Object.values(sales)); // result  [ 30, 40, 45, 70, 20 ]
-// It will create an array of the object and also it creates an array of "key and value"
+// It will convert the object into an array and also it creates an array of "key and value pair"
 console.log(Object.entries(sales));
 /*  result
 
@@ -436,12 +435,15 @@ console.log(Object.entries(sales));
 
 */
 
+// we are grabbing the value from above array like index 0th is this ['john', 30] from the whole array and again index 0th from this ['john', 30] array is "john"
 console.log(Object.entries(sales)[0][0]); // result John
 console.log(Object.entries(sales)[0][1]); // result 30
 console.log(Object.entries(sales)[1][0]); // result Sally
 console.log(Object.entries(sales)[1][1]); // result 40
 
-console.log("------ Custom function for adding all the key values ---------------");
+console.log(
+  "------ Custom function for adding all the key values ---------------"
+);
 
 // Here we have created a custom function name "sumSales"
 function sumSales(sales) {
@@ -449,8 +451,8 @@ function sumSales(sales) {
   let sum = 0;
 
   for (let valuee of Object.values(sales)) {
-    // Object.values(sales) is return all the numbers in array
-    // In valuee we are getting all the numbers for each iteration
+    // Object.values(sales) will return all the numbers in array
+    // In valuee we are getting all the numbers in iteration (one by one)
 
     /* 
         'Incrementing operators'
@@ -463,72 +465,163 @@ function sumSales(sales) {
         
     */
 
-        //by the above example what we are doing is adding the numbers which we are getting in valuee into sum 
-        // ex: first we'll get "30" in "valuee" and we have "0" stored in "sum" so it will add the value to current value of sum like this 0+30 = 30 again it goes like 30+40 = 70 and so on
+    //by the above example what we are doing is adding the numbers which we are getting in valuee into sum
+    // ex: first we'll get "30" in "valuee" and we have "0" stored in "sum" so it will add the value to current value of sum like this 0+30 = 30 again it goes like 30+40 = 70 and so on
     sum += valuee;
   }
 
   return sum; // and when the iteration end it will return the sum of all numbers
 }
 
-console.log(sumSales(sales));  // result 205
+console.log(sumSales(sales)); // result 205
 
+console.log(
+  "------ Custom function for iterating all the key values pair ---------------"
+);
 
-console.log("------ Custom function for iterating all the key values pair ---------------");
-
-function personSales(obj){
-    // used object destructuring method to store both key and value pair into keyy and valuee variables
-    for(let [keyy,valuee] of Object.entries(obj)){
-        console.log(`${keyy} had ${valuee} sales`)
-    }
+function personSales(obj) {
+  // used object destructuring method to store both key and value pair into keyy and valuee variables
+  for (let [keyy, valuee] of Object.entries(obj)) {
+    console.log(`${keyy} had ${valuee} sales`);
+  }
 }
 
-console.log(personSales(sales))
+console.log(personSales(sales));
 
 let tokenDark = {
-    grey:{
-        fir: "#aaaa",
-        sec: "#bbbb",
-        thr: "#cccc"
-    },
-    green:{
-        for: "#dddd",
-        fif: "#eeee",
-        six: "#ffff"
-    },
-    yellow:{
-        sev: "#gggg",
-        eig: "#hhhh",
-        nin: "#iiii"
-    }
-}
+  blue: {
+    fir: "#aaaa",
+    sec: "#bbbb",
+    thr: "#cccc",
+  },
+  green: {
+    for: "#dddd",
+    fif: "#eeee",
+    six: "#ffff",
+  },
+  yellow: {
+    sev: "#gggg",
+    eig: "#hhhh",
+    nin: "#iiii",
+    // ten: "#oooo",  to check key.length in forEach loop
+  },
+};
 
+// console.log(Object.entries(tokenDark)); // ['blue', {…}] ['green', {…}] ['yellow', {…}]
 
-// console.log(Object.entries(tokenDark)) 
-// console.log(Object.keys(tokenDark)); 
-Object.entries(tokenDark).forEach(function([key, val]){
-    // console.log(key)
-    // console.log(val)
-    const keys = Object.keys(val);
-    console.log(keys) 
-    const values = Object.values(val);
-    // console.log(values) 
-    const length = keys.length;
-    // console.log(length) 
-    let reversedObj = {};
+// console.log(Object.keys(tokenDark)); // ['blue', 'green', 'yellow']
 
-    for (let i = 0; i < length; i++) {
-        console.log(keys)
-        // console.log( keys[0])
-        // reversedObj[keys[i]] = values[length - i - 1];
-        // console.log(reversedObj[keys[i]])
-        // console.log(values[length - i - 1]) 
-     
-      }
-})
+const reversedTokens = {};
 
-console.log('*********************************')
+// with the help of object destructing we are the key in 'key' variable and value in "val" variable
+Object.entries(tokenDark).forEach(function ([key, val]) {
+  // console.log(key); // it will console only key without putting it in array  blue, green , yellow
+  // console.log(typeof key); // String
 
+  // console.log(val); // it will console the values corresponding to that key in 'object' {fir: '#aaaa', sec: '#bbbb', thr: '#cccc'}, {for: '#dddd', fif: '#eeee', six: '#ffff'}, {sev: '#gggg', eig: '#hhhh', nin: '#iiii'}
+  // console.log(typeof val); // object
 
+  //! Now we are converting the "keys" in array
+  const keys = Object.keys(val);
+  // console.log(keys); // converting the object which we have in "val" only "keys" in array ['fir', 'sec', 'thr'] , ['for', 'fif', 'six'], ['sev', 'eig', 'nin']
 
+  //! Now we are converting the "values" in array
 
+  const values = Object.values(val);
+  // console.log(values); // converting the oject which we have in val only values in array ['#aaaa', '#bbbb', '#cccc'], ['#dddd', '#eeee', '#ffff'], ['#gggg', '#hhhh', '#iiii']
+
+  //! It will console "3" three times because it is is forEach loop and it will fetch the length of each 3 arrays stored in "keys" variable
+  const length = keys.length; // 3 times 3 "total arrays in 3" and the total number of strings in that array is 3
+  // console.log(length); // as we know we are iterating each array one by one so it will calculate length of each array first array is ['fir', 'sec', 'thr'] which have 3 strings so the length is 3 same goes with second array ['for', 'fif', 'six'] is 3 and same for 3rd as well
+  let reversedObj = {};
+
+  for (let i = 0; i < length; i++) {
+    // this iteration will iterate 3 times for each array and 9 times in total for each value in "keys"
+    /* 
+   * first iteration in array :- ['fir', 'sec', thr]
+   condition = i<3
+   result :- keys[0] = fir , keys[1] = sec, keys[2] = thr
+
+   * second iteration in array :- ['for', 'fif', 'six']
+   condition = i<3
+   result :- keys[0] = for , keys[1] = fif, keys[2] = six
+
+   * third iteration in array :- ['sev', 'eig', 'nin']
+   condition = i<3
+   result :- keys[0] = sev , keys[1] = eig, keys[2] = nin
+
+   console.log(keys[i]) - fir, sec, thr, for, fif, six, sev, eig, nin
+   */
+    // console.log(keys[i]);
+
+    /* 
+   * first iteration in array ['#aaaa', '#bbbb', '#cccc']
+    condition = i<3
+    result :- values[3-0-1] = values[2] = #cccc , values[3-1-1] = values[1] = #bbbb, values[3-2-1] = values[0] = #aaaa
+
+   * second iteration in array ['#dddd', '#eeee', '#ffff']
+    condition = i<3
+    result :- values[3-0-1] = values[2] = #ffff , values[3-1-1] = values[1] = #eeee, values[3-2-1] = values[0] = #dddd
+
+   * third iteration in array ['#gggg', '#hhhh', '#iiii']
+    condition = i<3
+    result :- values[3-0-1] = values[2] = #iiii , values[3-1-1] = values[1] = #hhhh, values[3-2-1] = values[0] = #gggg
+
+    console.log(values[length - i - 1]) - #cccc, #bbbb, #aaaa, #ffff, #dddd, #iiii, #hhhh, #gggg
+  */
+    // console.log(values[length - i - 1]);
+
+    //! reverseObj[fir, sec, thr and so on ] = values[#cccc, #bbbb, #aaaa and so on]
+
+    //! reversedObj is an empty object which we've initiated above with the help of this code we create a new object (reversedObj) by reversing the order of values in an array (values) and associating them with specific keys from another array (keys). It is important to note that both keys and values arrays should have the same length for this operation to work correctly
+    reversedObj[keys[i]] = values[length - i - 1];
+    // console.log(reversedObj); // it will show the process of reversing the values[2] corresponding keys[0]
+  }
+
+  /* first iteration (forEach loop) - {fir: '#cccc', sec: '#bbbb', thr: '#aaaa'} - first time first object stored in reverseObj variable */
+  /* second iteration (forEach loop) - {for: '#ffff', fif: '#eeee', six: '#dddd'} - second time  second object stored in reverseObj variable */
+  /* third iteration (forEach loop) - {sev: '#iiii', eig: '#hhhh', nin: '#gggg'} - third time third object stored in reverseObj variable */
+  // console.log(reversedObj);
+  reversedTokens[key] = reversedObj;
+});
+console.log(tokenDark);
+//! BEFORE REVERSED RESULT
+/* 
+{
+  blue: {
+    fir: "#aaaa",
+    sec: "#bbbb",
+    thr: "#cccc",
+  },
+  green: {
+    for: "#dddd",
+    fif: "#eeee",
+    six: "#ffff",
+  },
+  yellow: {
+    sev: "#gggg",
+    eig: "#hhhh",
+    nin: "#iiii",
+  },
+};
+*/
+console.log(reversedTokens);
+//! REVERSED RESULT
+/* 
+  blue: {
+    fir: "#cccc",
+    sec: "#bbbb",
+    thr: "#aaaa",
+  },
+  green: {
+    for: "#ffff",
+    fif: "#eeee",
+    six: "#dddd",
+  },
+  yellow: {
+    sev: "#iiii",
+    eig: "#hhhh",
+    nin: "#gggg",
+  },
+
+ */

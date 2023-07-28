@@ -15,8 +15,8 @@
 </body>
 <script>
     console.log('Loops in javascript 2nd tutorial')
-        // Syntax of for loop is (initialization, condition, update)
-        // Loop will break when condition gets false
+    // Syntax of for loop is (initialization, condition, update)
+    // Loop will break when condition gets false
 
     // !!important = we can create variables in both ways inside the loop or outside the loop both works same
 
@@ -65,19 +65,19 @@
 
 
     console.log('==================== forEach Method')
-        // In modern javascript we can do the same method with easier way by using for each function 
+    // In modern javascript we can do the same method with easier way by using for each function 
 
     let arr = [3, 5, 6, 34, 76];
     // console.log(arr);
 
-    arr.forEach(function(element, index, arrayfff) {
+    arr.forEach(function (element, index, arrayfff) {
         console.log(element, index, arrayfff);
         // (3, 5, 6, 34, 76 - element, 0, 1, 2, 3, 4 - index, [3, 5, 6, 34, 76] - array x 5 ) result
     });
 
 
     let friendsNew = ['Jarry', 'Peter', 'Kyle', 'Jeremy', 'Emma'];
-    friendsNew.forEach(function(element) {
+    friendsNew.forEach(function (element) {
         console.log("Hello friends " + element);
     })
 
@@ -115,7 +115,7 @@
     // here the element of this function is {name: 'Harsh', salary: 2, channel: 'code with harsh'} in first iteration and the index is 0
 
     // Similarly the element of this function is {name: 'Tom', salary: 5, channel: 'code with tom'}in second iteration and the index is 1
-    notesObj.forEach(function(element, index) {
+    notesObj.forEach(function (element, index) {
         console.log(`My name is ${element.name} and my salary is ${element.salary} and my channel is ${element.channel}`);
         console.log(index);
         console.log(element);
