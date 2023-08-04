@@ -488,6 +488,8 @@ function personSales(obj) {
 
 console.log(personSales(sales));
 
+// -------------------------- Advance use of object.entries ----------------------------
+
 let tokenDark = {
   blue: {
     fir: "#aaaa",
@@ -582,9 +584,38 @@ Object.entries(tokenDark).forEach(function ([key, val]) {
   /* second iteration (forEach loop) - {for: '#ffff', fif: '#eeee', six: '#dddd'} - second time  second object stored in reverseObj variable */
   /* third iteration (forEach loop) - {sev: '#iiii', eig: '#hhhh', nin: '#gggg'} - third time third object stored in reverseObj variable */
   // console.log(reversedObj);
-  reversedTokens[key] = reversedObj;
+
+  //! and here this consists 3 keys in 'key' parameter "blue", green, yellow
+  // console.log(key);
+  // console.log(reversedObj);
+
+  //* it will set reversed values corresponding to that keys like - for key "blue" : value will be {fir: '#cccc', sec: '#bbbb', thr: '#aaaa'} for key "green" : {for: '#ffff', fif: '#eeee', six: '#dddd'} and for "yellow" {sev: '#iiii', eig: '#hhhh', nin: '#gggg'}
+  reversedTokens[key] = reversedObj; //! after that we are storing this reversedTokens in empty object "reversedTokens" which we defined above
+
+  //*********** it will not work in this context you only square brackets not dot notation */
+  // console.log(reversedTokens.key); //XXXXXXXXXXXXXXXXXXX
+  /* Square Bracket Notation (Correct for Dynamic Property Access):
+      When you use square bracket notation, like reversedTokens[key], it treats key as a variable and uses its value to access the corresponding property in the reversedTokens object.
+      For example, if key holds the value 'someKey', then reversedTokens[key] is equivalent to reversedTokens['someKey'], which accesses the property named 'someKey' in the reversedTokens object. */
+
+  // reversedTokens[key] is same like we did to fetch key "values" in object like this
+  // console.log(reversedTokens["blue"]); // another way of fetching key values in Object person.firstname or person['firstname']
+  // console.log(reversedTokens["green"]);
+  // console.log(reversedTokens["yellow"]);
+
+  /* 
+  For example, let's assume keys is ['a', 'b', 'c'], and reversedObj is { a: 3, b: 2, c: 1 }. After executing the line reversedTokens[key] = reversedObj; in an iteration, the reversedTokens object will look like this:
+
+  reversedTokens = {
+  'a': { a: 3, b: 2, c: 1 },
+  'b': { a: 3, b: 2, c: 1 },
+  'c': { a: 3, b: 2, c: 1 }
+}
+ 
+  */
 });
-console.log(tokenDark);
+
+// console.log(tokenDark);
 //! BEFORE REVERSED RESULT
 /* 
 {
@@ -605,7 +636,7 @@ console.log(tokenDark);
   },
 };
 */
-console.log(reversedTokens);
+// console.log(reversedTokens);
 //! REVERSED RESULT
 /* 
   blue: {
