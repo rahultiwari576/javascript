@@ -341,6 +341,31 @@ console.log(person.fullname());
 console.log(person.object.city);
 console.log(person.object.country);
 
+// *********** Set key name as "key" and value name as "value" corresponding to that key *******************
+
+const fruitsCustom = [
+  { name: "apple", color: "red" },
+  { name: "banana", color: "yellow" },
+  { name: "grape", color: "purple" },
+];
+
+const fruitColors = {};
+
+fruitsCustom.forEach((fruit) => {
+  fruitColors[fruit.name] = fruit.color;
+});
+
+console.log(fruitColors);
+
+/* output
+{
+  "apple": "red",
+  "banana": "yellow",
+  "grape": "purple"
+}
+
+*/
+
 // Object Destructuring
 let bioData = {
   name: "harsh",
