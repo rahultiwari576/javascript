@@ -12,7 +12,8 @@ let bioData = {
 
 // console.log(`My name is ${bioData.name}`); // Without Destructuring
 
-// It is very important to use the same variable names as the object keys in bioData during destructuring.
+// It is very important to use the same variable names as the object keys in bioData during object destructuring.
+
 // let { name, age, language } = bioData;
 
 // console.log(`After destructuring, name is ${name}`);
