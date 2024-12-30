@@ -2,7 +2,7 @@
 
 ---
 
-### Filtering the numbers that are greater or equal to 18.
+## Filtering the numbers that are greater or equal to 18.
 
 - We used filter method to filter out the numbers in `ageArray` that are greater than or equal to 18.
 - This `filter` method returns a new array filtering out the numbers which is greater or equal to 18.
@@ -26,7 +26,7 @@ let filterArray = ageArray.filter(checkAge);
 return age >= 18;
 ```
 
-### **Example:-**
+### **Example**:
 
 _Filtering the numbers which is greater than 18_
 
@@ -43,7 +43,7 @@ console.log(ageArray); // [2, 10, 48, 40, 20, 6]
 console.log(filterArray); // [48, 40, 20]
 ```
 
-_Output_
+### Output :
 
 ```js
 [2, 10, 48, 40, 20, 6]; // ageArray
@@ -53,7 +53,9 @@ _Output_
 [48, 40, 20]; // filterArray
 ```
 
-### Filtering the string that have length of 0
+---
+
+## Filtering the string that have length of 0
 
 - We have an array `xx` which have two strings `"harsh"` and `""` whose length is `2`.
 
@@ -68,7 +70,7 @@ console.log(xx.length); // output 2
 let yy = xx.filter(yellow);
 ```
 
-- And here in this function we are filtering out the element which has length not equal to `0`. In this case, `harsh` will be returned to `filter` method and `filter` method will creates a new array ['harsh']
+- And here in this function we are filtering out the element which has length not equal to `0`. In this case, `harsh` will be returned to `filter` method and `filter` method will creates a new array ['harsh'].
 
 ```js
 function yellow(element, index, array) {
@@ -76,7 +78,7 @@ function yellow(element, index, array) {
 }
 ```
 
-### **Example**:-
+### **Example**:
 
 _filtering the value whose length is not equal to 0_
 
@@ -95,17 +97,19 @@ console.log(yy);
 console.log(yy.length);
 ```
 
-_Output_
+### Output :
 
 ```js
 ["harsh"];
 ```
 
-```js
-1; // Arrays length
+```
+1 // Arrays length
 ```
 
-- **Shorthand**
+- **Shorthand:**
+- The `return` statement ensures that the result of the condition (true or false) is passed back to `.filter()`.
+- Without the return, the callback would not provide any output, resulting in an error or unexpected behavior.
 
 ```js
 let xx = ["harsh", ""].filter((element) => {
@@ -113,9 +117,11 @@ let xx = ["harsh", ""].filter((element) => {
 }).length; // output 1
 ```
 
-### Filter method in an array with one element: an empty stirng
+---
 
-### **Example**:-
+## Filter method in an array with one element: an empty stirng
+
+### **Example**:
 
 ```js
 let zz = [""]; // Create an array with one element: an empty string.
@@ -136,20 +142,22 @@ console.log(ff.length); // Output: 0 (because the empty string was filtered out,
 console.log(ff); // Output: [] (an empty array, because the only element was filtered out).
 ```
 
+---
+
 ## Filter method in Objects
 
-### Removing an object from the array using filter method
+## Removing an object from the array using filter method
 
 - The `console.log(item)` inside the `blue` function will print each object in the `cusArray` one by one as the `filter` method iterates through the array.
 
 ```js
-// Output will look like this:-
+// Output will look like this:
 { id: 1, name: 'Harsh', lname: 'jha' }
 { id: 2, name: 'Rohan', lname: 'Raj' }
 { id: 3, name: 'Abhishek', lname: 'Amrit' }
 ```
 
-- The `blue` function returns `true` for the objects where `item.id !== 2`. This means the object with id: 2 will be filtered out, and the resulting `newCusArray` will contain the remaining objects:
+- The `blue` function returns `true` for the objects where `item.id !== 2`. This means the object with id: 2 will be filtered out, and the resulting `newCusArray` will contain the remaining objects.
 
 ```js
 console.log(newCusArray)// output will look like this
@@ -159,7 +167,7 @@ console.log(newCusArray)// output will look like this
 ];
 ```
 
-### **Example**:-
+### **Example**:
 
 ```js
 let cusArray = [
@@ -189,7 +197,7 @@ let newCusArray = cusArray.filter(blue);
 console.log(newCusArray);
 ```
 
-_Output_
+### Output :
 
 ```js
 { id: 1, name: 'Harsh', lname: 'jha' }
@@ -203,3 +211,5 @@ _Output_
   { id: 3, name: "Abhishek", lname: "Amrit" },
 ];
 ```
+
+---

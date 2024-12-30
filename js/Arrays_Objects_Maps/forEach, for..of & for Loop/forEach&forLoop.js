@@ -1,5 +1,3 @@
-// ****** Set key name as "key" and value name as "value" corresponding to that key (read this again) ******
-
 const fruitsCustom = [
   { name: "apple", color: "red" },
   { name: "banana", color: "yellow" },
