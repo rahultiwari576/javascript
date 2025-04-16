@@ -211,3 +211,35 @@ console.log(newUser.addresses); // [{ street: '987 Maple St' }, { street: '456 E
 ```
 
 If you need to deeply clone the `addresses` array and its contents, you might need to use a different approach, such as `JSON.parse(JSON.stringify(user.addresses))` or a library like Lodash.
+
+<p style="font-size:2rem; font-weight:bold; color:yellow;">Why and How to Override References Using Shallow Copies</p>
+
+**When you add addresses: `[...user.addresses]`**
+
+You're overriding the referenced `addresses` array with a new shallow copy of the array.
+
+**Think of it like this:**
+
+- `{ ...user }` creates a new object with a reference to the original `addresses` array.
+- `addresses: [...user.addresses]` creates a new array copy and assigns it to the `addresses` property, overriding the referenced array.
+
+**Here's an example:**
+
+```javascript
+const user = {
+  name: "John",
+  addresses: [{ street: "123 Main St" }],
+};
+
+const newUser = { ...user, addresses: [...user.addresses] };
+
+console.log(newUser.addresses === user.addresses); // false
+```
+
+- In this example, **`newUser.addresses`** is a new array copy, not the same reference as  
+  `user.addresses`.
+
+- If you only used `{ ...user }`, **`newUser.addresses`** would reference the same array as  
+  `user.addresses`, and changes to the array would affect both objects.
+
+- By using **`addresses`**: `[...user.addresses]`, you're ensuring that **`newUser.addresses`** is a separate array copy, and changes to it won't affect the original **`user.addresses`** array.

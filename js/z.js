@@ -1,5 +1,7 @@
-let people = ["Harsh", "Rohan", "Skillf", "Shubham", "Vikrant"];
+const numbers = [1, 2, 3, 4, 5];
 
-for (const array of people) {
-  console.log(array);
-}
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15
